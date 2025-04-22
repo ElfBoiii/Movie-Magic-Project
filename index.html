@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Magic</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+        <div class="header__container">
+          <div class="logo">
+          <img src="./assets/movieMagic_logo.png" alt="Movie Magic Logo" class="logo__img" />
+          <h3 class="logo__name">Movie Magic</h3>
+          </div>
+          <div class="header-buttons">
+            <button class="header__link">Browse</button>
+            <button class="header__link">Contact</button>
+            <button class="header__link header__primary">Log In</button>
+          </div>
+        </div>
+      </header>
+      <nav>
+        <div class="banner__wrapper">
+          <img
+            class="banner__img"
+            src="./assets/movieMagic_banner.png"
+            alt="Movie Magic Banner"
+          />
+          <div class="banner__overlay">
+            <h1 class="banner__title">Movie Magic</h1>
+            <input
+              class="banner__search"
+              type="text"
+              placeholder="Search for a movie..."
+            />
+          </div>
+        </div>
+      </nav>
+      <section class="featured">
+        <div class="container">
+          <h2 class="featured__heading">🎬 Featured Movies</h2>
+          <div id="featured-movies" class="movie-grid"></div>
+        </div>
+      </section>
+  </body>
 </html>
