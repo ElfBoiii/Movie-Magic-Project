@@ -150,6 +150,7 @@ nav {
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
+    padding: 0 100px;
   }
   
   .movie-card {
@@ -175,7 +176,53 @@ nav {
     object-fit: cover;
   }
   
-  .movie-card h3 {
+  .movie-card h3,
+  .movie-card h4 {
     font-size: 1rem;
-    padding: 10px;
+    padding-top: 10px;
   }
+
+  /* FOOTER */
+
+.site-footer {
+  background-color: #000;
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer__links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer__link {
+  background-color: rgba(243, 243, 198);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 300ms ease;
+}
+
+.footer__primary {
+  background-color: rgba(243, 243, 198, 0.9);
+  font-size: 14px;
+}
+
+.footer__link:hover {
+  transform: scale(1.1);
+  cursor: not-allowed;
+}

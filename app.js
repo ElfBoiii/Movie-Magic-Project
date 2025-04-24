@@ -20,6 +20,7 @@ function getPopularMovies() {
         card.innerHTML = `
           <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
           <h3>${movie.title}</h3>
+          <h4>${Math.floor(movie.vote_average)} / 10 <i class="fa-solid fa-star"></i> <h4>
         `;
 
         featuredContainer.appendChild(card);
@@ -29,3 +30,38 @@ function getPopularMovies() {
 }
 
 getPopularMovies();
+
+function searchMovies(query) {
+  fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`)
+    .then(res => res.json())
+    .then(data => {
+      const movies = data.results.slice(0, 8); // show up to 8 results
+      const featuredContainer = document.getElementById('featured-movies');
+      featuredContainer.innerHTML = '';
+
+      movies.forEach(movie => {
+        const card = document.createElement('div');
+        card.classList.add('movie-card');
+
+        card.innerHTML = `
+          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+          <h3>${movie.title}</h3>
+          <h4>${Math.floor(movie.vote_average)} / 10 <i class="fa-solid fa-star"></i></h4>
+        `;
+
+        featuredContainer.appendChild(card);
+      });
+    })
+    .catch(err => console.error('Search failed:', err));
+}
+
+const searchInput = document.getElementById('search-input');
+
+searchInput.addEventListener('keyup', (e) => {
+  const query = e.target.value.trim();
+  if (query.length > 2) {
+    searchMovies(query);
+  } else {
+    getPopularMovies(); // reset to popular if search is cleared or too short
+  }
+});
