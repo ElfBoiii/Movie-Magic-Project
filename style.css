@@ -134,6 +134,7 @@ nav {
 
   .featured {
     padding: 40px 20px;
+    height: 100vh;
     background-color: #111;
     color: white;
     text-align: center;
@@ -141,6 +142,43 @@ nav {
 
   .featured__heading {
     margin-bottom: 50px;
+  }
+
+  .featured__heading--wrapper {
+    display: flex;
+  }
+
+  .rating-slider__wrapper {
+    position: absolute;
+    right: 350px;
+    top: 350px;
+    background-color: rgba(243, 243, 198, 0.9);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    z-index: 10;
+  }
+  
+  .rating-slider__wrapper label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #111;
+    margin-bottom: 5px;
+  }
+  
+  #rating-range {
+    width: 150px;
+  }
+  
+  #no-results-message {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  .hidden {
+    display: none;
   }
   
   .movie-grid {

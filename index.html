@@ -49,7 +49,21 @@
     </nav>
     <section class="featured">
       <div class="container">
+        <div class="featured__heading--wrapper">
         <h2 class="featured__heading">🎬 Featured Movies</h2>
+        <div class="rating-slider__wrapper">
+          <label for="rating-range">Filter by Rating: <span id="rating-value">All</span></label>
+          <input
+            type="range"
+            id="rating-range"
+            min="0"
+            max="10"
+            step="1"
+            value="0"
+          />
+        </div>
+      </div>
+        <p id="no-results-message" class="hidden">No movies found.</p>
         <div id="featured-movies" class="movie-grid"></div>
       </div>
     </section>
